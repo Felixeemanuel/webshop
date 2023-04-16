@@ -42,7 +42,8 @@ exports.getAllProducts = (req, res) => {
 
 exports.getProductById = (req, res) => {
 
-    Product.findById(req.params.id).populate('User')
+    Product.findById(req.params.id)
+    // .populate('User')
         .then(data => {
             if(!data) {
                 res.status(404).json({
@@ -53,7 +54,8 @@ exports.getProductById = (req, res) => {
         })
         .catch(err => {
             res.status(500).json({
-                message: 'Something went wrong when fetching the product'
+                message: 'Something went wrong when fetching the product',
+                err: err.message
             })
         })
 

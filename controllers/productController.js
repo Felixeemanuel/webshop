@@ -4,12 +4,12 @@ const { addProduct, getAllProducts, deleteProduct, updateProduct, getProductById
 router.post('/add', addProduct)
 
 router.get('/', getAllProducts)
-
-router.delete('/:id', deleteProduct)
+router.get('/:id', getProductById)
 
 router.put('/:id', updateProduct)
 
-router.get('/:id', getProductById)
+router.delete('/:id', deleteProduct)
+
 
 
 
